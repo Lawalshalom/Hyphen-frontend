@@ -16,14 +16,35 @@ const Output = (props) => {
     return document.body.classList.add(theme);
   })
 
+  //formatting the date to display
   const displayDate = (date) => {
     const dateParts = date.split("-");
     const [ year, month, day ] = dateParts;
     const myDate = new Date();
     myDate.setFullYear(year, month -1, day);
-    return myDate.toDateString();
+    const dayOfMonth = Number.parseInt(day);
+    const dayArray = [...dayOfMonth.toString()];
+    let dayString;
+    switch (dayArray[dayArray.length-1]) {
+      case "1":
+        dayString = dayOfMonth + "st";
+        break;
+      case "2":
+        dayString = dayOfMonth + "nd";
+        break;
+      case "3":
+        dayString = dayOfMonth + "rd";
+        break;
+      default: dayString = dayOfMonth + "th"
+        break;
+    }
+    return {
+      date: myDate.toDateString(),
+      dayString
+    }
   }
 
+  //modify subscription
   const handleModify = () => {
     return setRedirect({
         pathname: "/",
@@ -31,6 +52,7 @@ const Output = (props) => {
       });
   };
 
+  //cancel subscription
   const handleCancel = () => {
     const confirm = window.confirm("Are you sure you want to unsuscribe?");
     if (confirm){
@@ -57,7 +79,8 @@ const Output = (props) => {
       </div>
       <div className="d-flex flex-column align-items-center">
         <div className="details">
-          <p className="col-md-8">Your chosen delivery date is: <strong>{displayDate(date)}</strong></p>
+          <p className="col-md-8">Your chosen delivery date is: <strong>{displayDate(date).date}</strong></p>
+          <p className="col-md-8">You will get your deliveries every <strong>{displayDate(date).dayString}</strong> of every month</p>
           <p className="col-md-8">Your additional comment is: <strong>{comment}</strong></p>
         </div>
         <div className="d-flex flex-column justify-content-between col-md-7">
@@ -66,7 +89,7 @@ const Output = (props) => {
         </div>
 
         <div className="d-flex col-md-7 mt-4">
-          <a href="https://github.com/lawalshalom/chaeban-ice-cream" className="btn btn-primary github-btn">
+          <a href="https://github.com/lawalshalom/chaeban-ice-cream" target="_blank" rel="noopener noreferrer" className="btn btn-primary github-btn">
             <i className="fa fa-github mr-2" aria-hidden="true"></i>Github Repo</a>
         </div>
       </div>

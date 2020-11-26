@@ -11,14 +11,17 @@ const Input = (props) => {
 
 
       //modifying previous preferences
-    const savedPreference = props.location.state;
-    const prevPreference = savedPreference.userPreference;
+    let savedPreference, message;
+    if (typeof props.location.state === "object"){
+        savedPreference = props.location.state.userPreference;
+        message = props.location.state.message;
+    }
     let defaultDate, defaultTheme, defaultComment;
 
-    if (prevPreference){
-        defaultDate = prevPreference.date;
-        defaultTheme = prevPreference.theme;
-        defaultComment = prevPreference.comment;
+    if (typeof savedPreference === "object"){
+        defaultDate = savedPreference.date;
+        defaultTheme = savedPreference.theme;
+        defaultComment = savedPreference.comment;
     }
 
     const handleSubmit = (e) => {
@@ -50,13 +53,13 @@ const Input = (props) => {
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center mt-4">
                 <h2 className="text-center pl-4 pr-4"><strong>Ice Cream Subscription Service</strong></h2>
-                <p className="text-center mt-2">Kindly fill in your preferences for your monthly Inputmade ice cream subscription!</p>
+                <p className="text-center mt-2">Kindly fill in your preferences for your monthly homemade ice cream subscription!</p>
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center">
                 {
-                    savedPreference.message &&
+                    message &&
                     <div className="alert col-md-12 col-md-10 col-lg-8 alert-dismissible fade show" role="alert">
-                        <p className="text-danger">{savedPreference.message}</p>
+                        <p className="text-danger">{message}</p>
                         <button type="button" id="closeTerms"  className="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true" className="text-danger">&times;</span>
                         </button>
@@ -79,7 +82,7 @@ const Input = (props) => {
                 <div className="d-flex flex-column flex-md-row input-detail">
                     <div className="col-12 col-md-6">
                         <p><strong>Choose your favourite theme?</strong></p>
-                        <p>Kindly pick the option that best suits your need at this time.</p>
+                        <p>Kindly pick your favourite theme outlook to display your preferences.</p>
                     </div>
                     <div className="ml-3 ml-md-5">
                         <div className="d-flex ml-md-3 align-items-center">
@@ -104,7 +107,7 @@ const Input = (props) => {
 
                 <div className="d-flex flex-column flex-md-row input-detail">
                     <div className="col-12 col-md-6">
-                        <p><strong>Additional comments or Special Request?</strong></p>
+                        <p><strong>Additional comments or Special request?</strong></p>
                         <p>We want to know more about your subscription, in about 50 words (there's a 400 character limit).</p>
                     </div>
                     <div className="d-flex justify-content-center ml-md-5">
