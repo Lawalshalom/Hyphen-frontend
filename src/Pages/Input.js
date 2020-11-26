@@ -47,15 +47,15 @@ const Input = (props) => {
     }
     else return (
         <div className="container input">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-down">
                 <img src="https://res.cloudinary.com/lawfirm1000/image/upload/v1606300600/chaeban_pmo1jm.jpg"
                     alt="chaeban logo"/>
             </div>
-            <div className="d-flex flex-column align-items-center justify-content-center mt-4">
+            <div className="d-flex flex-column align-items-center justify-content-center mt-4" data-aos="fade-up">
                 <h2 className="text-center pl-4 pr-4"><strong>Ice Cream Subscription Service</strong></h2>
                 <p className="text-center mt-2">Kindly fill in your preferences for your monthly homemade ice cream subscription!</p>
             </div>
-            <div className="d-flex flex-column align-items-center justify-content-center">
+            <div className="d-flex flex-column align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="200">
                 {
                     message &&
                     <div className="alert col-md-12 col-md-10 col-lg-8 alert-dismissible fade show" role="alert">

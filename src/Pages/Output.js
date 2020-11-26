@@ -69,26 +69,26 @@ const Output = (props) => {
    }
    else return (
     <div className="container output">
-      <div className="text-center">
+      <div className="text-center" data-aos="fade-down">
         <img src="https://res.cloudinary.com/lawfirm1000/image/upload/v1606300600/chaeban_pmo1jm.jpg"
             alt="chaeban logo"/>
       </div>
-      <div>
+      <div data-aos="fade-left">
         <a href="/"><i className="fa fa-arrow-left mr-2" aria-hidden="true">
               </i>Go to Input</a>
       </div>
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="200">
         <div className="details">
-          <p className="col-md-8">Your chosen delivery date is: <strong>{displayDate(date).date}</strong></p>
-          <p className="col-md-8">You will get your deliveries every <strong>{displayDate(date).dayString}</strong> of every month</p>
-          <p className="col-md-8">Your additional comment is: <strong>{comment}</strong></p>
+          <p className="">Your chosen delivery date is: <strong>{displayDate(date).date}</strong></p>
+          <p className="">You will get your deliveries every <strong>{displayDate(date).dayString}</strong> of every month</p>
+          <p className="">Your additional comment is: <strong>{comment}</strong></p>
         </div>
-        <div className="d-flex flex-column justify-content-between col-md-7">
+        <div className="d-flex flex-column" data-aos="fade-up" data-aos-delay="400">
           <button className="btn btn-warning" onClick={handleModify}>Modify Subscription</button>
           <button className="btn btn-danger" onClick={handleCancel}>Cancel Subscription</button>
         </div>
 
-        <div className="d-flex col-md-7 mt-4">
+        <div className="d-flex mt-4" data-aos="fade" data-aos-delay="600">
           <a href="https://github.com/lawalshalom/chaeban-ice-cream" target="_blank" rel="noopener noreferrer" className="btn btn-primary github-btn">
             <i className="fa fa-github mr-2" aria-hidden="true"></i>Github Repo</a>
         </div>
