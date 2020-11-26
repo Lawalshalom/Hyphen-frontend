@@ -54,7 +54,7 @@ const Output = (props) => {
 
   //cancel subscription
   const handleCancel = () => {
-    const confirm = window.confirm("Are you sure you want to unsuscribe?");
+    const confirm = window.confirm("Are you sure you want to unsubscribe?");
     if (confirm){
       props.setUserPreference(null);
       return setRedirect({
