@@ -1,104 +1,40 @@
-body {
-	--var-red: #f34a1c;
-	--var-dark-blue: #163f69;
-	--var-gray: rgba(128, 128, 128, 0.2);
+.bgimg {
+  background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
 }
 
-.dark {
-	background: radial-gradient(rgba(black, 0.2), rgba(black, 0.8));
-	color: #fff;
+.topleft {
+  position: absolute;
+  top: 16px;
+
+  img{
+    width: 100px;
+  background: #fff;
+  border-radius: 30px;
+  }
 }
 
-.blue {
-	background: radial-gradient(rgba(blue, 0.2), rgba(blue, 0.8));
+.bottomleft {
+  position: absolute;
+  bottom: 0;
 }
-.green {
-	background: radial-gradient(rgba(green, 0.2), rgba(green, 0.8));
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-
-.input {
-	margin-top: 2rem;
-	img {
-		height: 4rem;
-	}
-	strong {
-		color: var(--var-dark-blue);
-	}
-	input:focus {
-		outline: none;
-	}
-	.input-detail {
-		margin: 3rem 0;
-		padding-bottom: 4rem;
-		border-bottom: 2px solid var(--var-gray);
-
-		input[type="date"] {
-			border: none;
-			padding: 10px;
-			background-color: var(--var-gray);
-			border-radius: 10px;
-		}
-
-		textarea {
-			border: none;
-			padding: 10px;
-			width: 373px;
-			height: 216px;
-			background-color: var(--var-gray);
-
-			&:focus {
-				outline: none;
-			}
-		}
-		button {
-			border: none;
-			padding: 10px 30px;
-			border-radius: 30px;
-			margin: 10px 0;
-			width: 70%;
-			font-weight: bolder;
-			color: #fff;
-			&.completed {
-				background-color: var(--var-red);
-			}
-			&:hover {
-				color: #fff;
-			}
-		}
-	}
-}
-
-.output {
-	margin-top: 2rem;
-	img {
-		height: 4rem;
-	}
-	.details {
-		margin-top: 3rem;
-	}
-	button {
-		padding: 10px;
-		border-radius: 20px;
-		margin: 10px 0;
-		width: max-content;
-		font-weight: bolder;
-		color: #fff;
-		&:hover {
-			color: #fff;
-		}
-	}
-	a {
-		color: #fff;
-		font-weight: bolder;
-		&:hover {
-			text-decoration: none;
-		}
-	}
-	.github-btn {
-		padding: 10px;
-		border-radius: 20px;
-	}
-	.buttons {
-		margin-top: 2rem;
-	}
+hr {
+  margin: auto;
+  width: 40%;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 10px;
 }
